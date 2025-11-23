@@ -9,3 +9,14 @@ This document explains the existing STM32 UART‑based Firmware Update (FWU) boo
 | BSF                | 0x08002000 – 0x08002FFF    | 4 KB, stores boot flags & headers    |
 | Application FW     | 0x08003000                 | Main firmware                        |
 | SRAM               | 0x20000000 – 0x20003FFF    | 16 KB runtime RAM                    |
+
+# II. Firmware Update Flow (MCU)
+### 1. Boot Stage
+
+### 2. Handshake Stage
+
+### 3. Meta Stage
+
+### 4. Transfer Firmware Stage
+
+### 5. Final Checksum Stage
