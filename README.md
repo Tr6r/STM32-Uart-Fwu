@@ -12,11 +12,13 @@ This document explains the existing STM32 UART‑based Firmware Update (FWU) boo
 
 # II. Firmware Update Flow (MCU)
 ### 1. Boot Stage
+![transfer-firmware](assets/images/fwu_mcu_1.png)
 
-### 2. Handshake Stage
+### 2. Handshake Stage and Meta Stage
+![transfer-firmware](assets/images/fwu_mcu_2.png)
 
-### 3. Meta Stage
+### 3. Transfer Firmware Stage
+![transfer-firmware](assets/images/fwu_mcu_3.png)
 
-### 4. Transfer Firmware Stage
-
-### 5. Final Checksum Stage
+### 4. Final Checksum Stage
+![transfer-firmware](assets/images/fwu_mcu_4.png)
