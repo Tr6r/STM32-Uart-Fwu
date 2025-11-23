@@ -23,7 +23,7 @@ This document explains the existing STM32 UART‑based Firmware Update (FWU) boo
 ### 4. Final Checksum Stage
 ![transfer-firmware](assets/images/fwu_mcu_4.png)
 
-## III. Bootloader Flow (MCU)
+# III. Bootloader Flow (MCU)
 
 ### 1. Boot Entry & Boot Flag Check
 ![boot-entry](assets/images/boot_mcu_1.png)
@@ -35,7 +35,7 @@ This document explains the existing STM32 UART‑based Firmware Update (FWU) boo
 ### 3. After Flashing (Checksum & Reset)
 ![boot-entry](assets/images/boot_mcu_4.png)
 
-## IV. Host-side Flow (PC)
+# IV. Host-side Flow (PC)
 ### 1. Initialization (UART Open) and Send FWU Command
 ![boot-entry](assets/images/fwu_host_1.png)
 
@@ -50,3 +50,18 @@ This document explains the existing STM32 UART‑based Firmware Update (FWU) boo
 
 ### 5. Final Checksum Command
 ![boot-entry](assets/images/fwu_host_5.png)
+
+# V. Protocol Specification
+| Field | Size (bytes) | Value / Range | Description |
+|-------|--------------:|---------------|-------------|
+| SOP   | 1             | 0xEF          | Start of packet |
+| LEN   | 1             | 0..254        | Number of DATA bytes |
+| DATA  | LEN           | —             | Payload (CMD + payload) |
+| FCS   | 1             | XOR           | LEN ^ data[0] ^ data[1] ... (simple XOR) |
+
+# VI. Struct
+### Host
+
+### Meta
+
+### Frame
