@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FAST Debug STM32L151",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+
+"executable": "/home/dinhcuong/Documents/ak-base-kit-stm32l151/boot/build_ak-base-kit-stm32l151-boot/ak-base-kit-stm32l151-boot.axf",
+      "device": "STM32L151RE",
+      "runToEntryPoint": "boot_main",
+      "svdFile": "/home/dinhcuong/Documents/Git/AK-Snake-Game/application/STM32L151.svd",
+
+      "gdbPath": "/home/dinhcuong/Documents/GNU_Toolchain/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb",
+
+      // ⚡⚡⚡ Tăng tốc SWD lên 6000 kHz
+       "serverArgs": [
+        "-c", "adapter speed 6000"
+      ],
+
+      "configFiles": [
+        "/usr/local/share/openocd/scripts/interface/stlink-v2.cfg",
+        "/usr/local/share/openocd/scripts/target/stm32l1.cfg"
+      ],
+
+      // ⚡ Chỉ reset + halt — không load lại flash
+      "preLaunchCommands": [
+        "monitor reset halt"
+      ],
+
+      // ⚡ Tắt các UI refresh gây chậm
+    //   "showDevDebugOutput": "none",
+
+      // Giảm tải VS Code
+      "liveWatch": {
+        "enabled": false
+      },
+
+      // Để GDB chạy mượt hơn
+      "gdbTarget": "extended-remote localhost:3333"
+    }
+  ]
+}
