@@ -34,3 +34,19 @@ This document explains the existing STM32 UART‑based Firmware Update (FWU) boo
 
 ### 3. After Flashing (Checksum & Reset)
 ![boot-entry](assets/images/boot_mcu_4.png)
+
+## IV. Host-side Flow (PC)
+### 1. Initialization (UART Open) and Send FWU Command
+![boot-entry](assets/images/fwu_host_1.png)
+
+### 2. Handshake Flow
+![boot-entry](assets/images/fwu_host_2.png)
+
+### 3. Send Metadata (Header)
+![boot-entry](assets/images/fwu_host_3.png)
+
+### 4. Transfer Firmware (Chunk Loop)
+![boot-entry](assets/images/fwu_host_4.png)
+
+### 5. Final Checksum Command
+![boot-entry](assets/images/fwu_host_5.png)
