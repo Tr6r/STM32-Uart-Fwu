@@ -22,3 +22,15 @@ This document explains the existing STM32 UART‑based Firmware Update (FWU) boo
 
 ### 4. Final Checksum Stage
 ![transfer-firmware](assets/images/fwu_mcu_4.png)
+
+## III. Bootloader Flow (MCU)
+
+### 1. Boot Entry & Boot Flag Check
+![boot-entry](assets/images/boot_mcu1.png)
+
+### 2. External → Internal Flash Update Flow
+![boot-entry](assets/images/boot_mcu2.png)
+![boot-entry](assets/images/boot_mcu3.png)
+
+### 3. After Flashing (Checksum & Reset)
+![boot-entry](assets/images/boot_mcu4.png)
