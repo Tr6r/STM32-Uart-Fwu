@@ -61,7 +61,8 @@ This document explains the existing STM32 UART‑based Firmware Update (FWU) boo
 
 # VI. Struct
 ### Host
+![boot-entry](assets/images/struct_1.png)
 
-### Meta
+### Meta + Frame
+![boot-entry](assets/images/struct_2.png)
 
-### Frame
